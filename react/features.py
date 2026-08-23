@@ -30,3 +30,11 @@ def to_feature_vec(landmarks, width: int, height: int) -> np.ndarray:
     points /= scale
 
     return points.reshape(-1)
+
+
+def landmarks_to_normalized_xyz(landmarks) -> list[list[float]]:
+    """Serialize MediaPipe's 21 normalized x/y/z landmarks for experiment logs."""
+    return [
+        [float(lm.x), float(lm.y), float(lm.z)]
+        for lm in landmarks.landmark
+    ]
