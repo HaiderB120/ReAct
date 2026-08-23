@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# ReAct local research data
+react_gestures.json
+react_logs/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
