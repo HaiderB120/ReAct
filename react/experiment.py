@@ -42,6 +42,7 @@ class ExperimentController:
         self,
         intended: Command,
         *,
+        trial_id: int | None = None,
         gesture_label: str | None = None,
         gesture_score: float | None = None,
     ) -> CommandDecision:
@@ -58,6 +59,7 @@ class ExperimentController:
 
         self.logger.log(
             "robot_command",
+            trial_id=trial_id,
             gesture_label=gesture_label,
             gesture_score=gesture_score,
             intended_command=intended.value,
@@ -69,6 +71,7 @@ class ExperimentController:
 
         print(
             "[ReAct] "
+            f"trial={trial_id} "
             f"intended={intended.value} "
             f"executed={executed.value} "
             f"error_injected={error_injected}"
